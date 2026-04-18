@@ -13,10 +13,10 @@ import express, {
 import cors from 'cors'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import authRoutes from './routes/auth.js'
-import searchRoutes from './routes/search.js'
-import restaurantRoutes from './routes/restaurants.js'
-import reviewRoutes from './routes/reviews.js'
+import authRoutes from './routes/auth'
+import searchRoutes from './routes/search'
+import restaurantRoutes from './routes/restaurants'
+import reviewRoutes from './routes/reviews'
 
 // for esm mode
 const __filename = fileURLToPath(import.meta.url)
