@@ -31,10 +31,18 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }))
 /**
  * API Routes
  */
+// 适配 Netlify 的路由：同时支持带 /api 和不带 /api 的路径
 app.use('/api/auth', authRoutes)
+app.use('/auth', authRoutes)
+
 app.use('/api/search', searchRoutes)
+app.use('/search', searchRoutes)
+
 app.use('/api/restaurants', restaurantRoutes)
+app.use('/restaurants', restaurantRoutes)
+
 app.use('/api/reviews', reviewRoutes)
+app.use('/reviews', reviewRoutes)
 
 /**
  * health
