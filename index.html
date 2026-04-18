@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>等会吃什么 - 发现附近美食</title>
+    <script type="text/javascript">
+      window._AMapSecurityConfig = {
+        securityJsCode: '49cd9ce6bebd76045d007e7b9246cf3c',
+      }
+    </script>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=24c6bd4c86fc89a36ff568cf42c17849&plugin=AMap.Geolocation"></script>
+    <script type="module">
+      if (import.meta.hot?.on) {
+        import.meta.hot.on('vite:error', (error) => {
+          if (error.err) {
+            console.error(
+              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
+            )
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
