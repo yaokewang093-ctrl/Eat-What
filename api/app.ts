@@ -44,6 +44,16 @@ app.use('/restaurants', restaurantRoutes)
 app.use('/api/reviews', reviewRoutes)
 app.use('/reviews', reviewRoutes)
 
+// 新增诊断接口：检查环境变量是否加载
+app.get('/api/debug', (req, res) => {
+  res.json({
+    has_amap_key: !!process.env.VITE_AMAP_KEY,
+    amap_key_prefix: process.env.VITE_AMAP_KEY ? process.env.VITE_AMAP_KEY.substring(0, 4) : 'none',
+    has_supabase_url: !!process.env.VITE_SUPABASE_URL,
+    env_keys: Object.keys(process.env).filter(k => k.includes('VITE') || k.includes('SUPABASE'))
+  });
+});
+
 /**
  * health
  */

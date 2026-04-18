@@ -78,7 +78,9 @@ export default function Home() {
       const restRes = await axios.get(url);
       setRestaurants(restRes.data.restaurants || []);
     } catch (err: any) {
-      setError(err.response?.data?.error || '搜索失败，请重试');
+      const status = err.response?.status;
+      const errorMsg = err.response?.data?.error || err.message;
+      setError(`搜索失败 (${status || '网络错误'}): ${errorMsg}`);
     } finally {
       setLoading(false);
     }
